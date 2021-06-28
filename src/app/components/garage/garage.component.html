@@ -1,0 +1,5 @@
+<app-voiture
+  *ngFor="let voiture of voitures"
+  [voiture]="voiture"
+  (showDetails)="detailsRequest($event)"
+></app-voiture>
