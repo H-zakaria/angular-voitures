@@ -9,15 +9,11 @@ import { VoitureService } from 'src/app/Services/VoitureService';
 })
 export class GarageComponent implements OnInit {
   voitures: Array<Voiture> = [];
-  requestedVoiture: Voiture = new Voiture('', '');
+
   constructor(private voitureService: VoitureService) {}
 
   ngOnInit(): void {
     this.voitures = this.voitureService.voitures;
   }
-  @Output()
-  sendVoiture: EventEmitter<Voiture> = new EventEmitter();
-  detailsRequest(voiture: Voiture) {
-    this.sendVoiture.emit(this.requestedVoiture);
-  }
+
 }
